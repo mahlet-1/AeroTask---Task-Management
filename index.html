@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroTask -Task Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-light-blue">
+
+    <div class="landing-page">
+        <header class="landing-nav">
+            <div class="landing-brand">
+                <div class="brand-square">AT</div>
+                <span>AeroTask</span>
+            </div>
+            <nav class="links">
+                <a href="#" class="active">Home</a>
+                <a href="#contact-section">Contact</a>
+            </nav>
+            <div class="sign-in-actions">
+                <button class="btn-login" id="open-login">Login</button>
+                <button class="btn-get-started" id="open-get-started">Get Started</button>
+            </div>
+        </header>
+
+        <section class="dashboard-showcase-container">
+            <div class="app-container">
+
+                <aside class="sidebar">
+                    <div class="sidebar-profile">
+                        <div class="sb-avatar">AT</div>
+                        <div>
+                            <h3>AeroTask User</h3>
+                            <p>user@example.com</p>
+                        </div>
+                    </div>
+
+                    <div class="search-box">
+                        <input type="text" placeholder="🔍 Search tasks...">
+                    </div>
+
+                    <nav class="sidebar-menu">
+                        <button class="menu-btn active" data-target="dashboard-view"><span class="m-icon">📊</span> Dashboard</button>
+                        <button class="menu-btn" data-target="tasks-view"><span class="m-icon">📋</span> My Tasks</button>
+                        <button class="menu-btn" data-target="projects-view"><span class="m-icon">📁</span> Projects</button>
+                        <button class="menu-btn" data-target="trash-view"><span class="m-icon">🗑️</span> Trash</button>
+                    </nav>
+
+                    <div class="sidebar-footer">
+                       <div class="Theme-Selector-Box">
+                          <label for="Theme-select">Select Theme</label>
+                          <select id="Theme-select">
+                             <option value="light-blue">Light Blue</option>
+                             <option value="dark-blue">Dark Blue</option>
+                             <option value="light-green">Light Green</option>
+                             <option value="dark-green">Dark Green</option>
+                             <option value="light-pink">Light Pink</option>
+                             <option value="dark-pink">Dark Pink</option>
+                          </select>
+                       </div>
+                    </div>
+                </aside>
+
+                <main class="main-content">
+
+                    <div id="dashboard-view" class="page-view">
+                        <header class="content-header">
+                            <div>
+                                <h1>Hello:)</h1>
+                                <p class="header-sub">Let's get things done!</p>
+                            </div>
+                            <div class="header-actions">
+                                <button id="open-window" class="btn-new-task">+ New Task</button>
+                            </div>
+                        </header>
+
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <span class="card-dot blue"></span>
+                                <h3 id="total-count">3</h3>
+                                <p>Total Tasks</p>
+                            </div>
+                            <div class="metric-card">
+                                <span class="card-dot pink"></span>
+                                <h3 id="pending-count">3</h3>
+                                <p>Pending Tasks</p>
+                            </div>
+                            <div class="metric-card">
+                                <span class="card-dot green"></span>
+                                <h3 id="completed-count">0</h3>
+                                <p>Completed Tasks</p>
+                            </div>
+                            <div class="metric-card">
+                                <span class="card-dot black"></span>
+                                <h3 id="completion-rate">0%</h3>
+                                <p>Completion Rate</p>
+                            </div>
+                        </div>
+
+                        <div class="workspace-layout">
+                            <section class="workspace-card">
+                                <div class="card-header-row">
+                                    <h2>Ongoing Tasks</h2>
+                                    <div class="task-pills">
+                                        <button class="tp-btn active">All</button>
+                                        <button class="tp-btn">High</button>
+                                        <button class="tp-btn">Medium</button>
+                                        <button class="tp-btn">Low</button>
+                                    </div>
+                                </div>
+
+                                <div id="tasks-list" class="tasks-stack">
+                                    <div class="task-item" data-priority="high">
+                                        <input type="checkbox" id="task-1">
+                                        <label for="task-1" class="task-text">Join meeting</label>
+                                        <div class="task-menu-container">
+                                            <button class="btn-action">⋮</button>
+                                            <div class="task-dropdown-menu">
+                                                <button class="btn-delete-action">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-item" data-priority="medium">
+                                        <input type="checkbox" id="task-2">
+                                        <label for="task-2" class="task-text">Do chores</label>
+                                        <div class="task-menu-container">
+                                            <button class="btn-action">⋮</button>
+                                            <div class="task-dropdown-menu">
+                                                <button class="btn-delete-action">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="task-item" data-priority="low">
+                                        <input type="checkbox" id="task-3">
+                                        <label for="task-3" class="task-text">Go on walk</label>
+                                        <div class="task-menu-container">
+                                            <button class="btn-action">⋮</button>
+                                            <div class="task-dropdown-menu">
+                                                <button class="btn-delete-action">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            
+                            <div>
+                                <div class="focus-mode-banner">
+                                    <h3>Focus Mode</h3>
+                                    <p>Goal: Complete your Task for the day!</p>
+                                </div>
+                                <div class="upcoming-deadlines-section">
+                                    <h3>Upcoming Deadlines</h3>
+                                    <div id="deadlines-stack" class="deadlines-stack">
+                                        <div class="task-item">
+                                            <label class="task-text">
+                                                <b>🎓 Capstone Project Deadline</b>
+                                                <br>
+                                                <small style="color: #ff4b4b; font-weight: 600;">Due: June 14, 2026</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tasks-view" class="page-view" style="display: none;">
+                        <section class="workspace-card">
+                            <div class="card-header-row">
+                                <h2>All Task Items</h2>
+                            </div>
+                            <div class="tasks-stack">
+                                <div class="task-item">
+                                    <input type="checkbox" id="all-t1">
+                                    <label for="all-t1" class="task-text">Join meeting</label>
+                                </div>
+                                <div class="task-item">
+                                    <input type="checkbox" id="all-t2">
+                                    <label for="all-t2" class="task-text">Do chores</label>
+                                </div>
+                                <div class="task-item">
+                                    <input type="checkbox" id="all-t3">
+                                    <label for="all-t3" class="task-text">Go on walk</label>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div id="projects-view" class="page-view" style="display: none;">
+                        <div class="project-board-grid">
+                            <section class="workspace-card">
+                                <h3>🚀 Important Projects</h3>
+                                <div class="tasks-stack">
+                                    <div class="task-item">
+                                        <label class="task-text"><b>Join meeting</b><br>Research and plan about target customers</label>
+                                    </div>
+                                    <div class="task-item">
+                                        <label class="task-text"><b>Do chores</b><br>Organize and clean the house</label>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="workspace-card">
+                                <h3>⚡ In Progress</h3>
+                                <div class="tasks-stack">
+                                    <div class="task-item">
+                                        <label class="task-text"><b>Go on walk</b><br>Daily fresh air break</label>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div id="trash-view" class="page-view" style="display: none;">
+                        <section class="workspace-card">
+                            <div class="card-header-row">
+                                <h2>Deleted Tasks (Trash)</h2>
+                            </div>
+                            <div id="trash-list" class="tasks-stack">
+                            </div>
+                        </section>
+                    </div>
+
+                </main>
+            </div>
+        </section>
+    </div>
+
+    <div id="task-popup" class="modal-overlay">
+        <div class="modal-surface">
+            <h2>Create New Task</h2>
+            <form id="task-form">
+                <div class="form-group">
+                    <label>Task Title</label>
+                    <input type="text" id="input-text" placeholder="Enter a task" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Priority</label>
+                        <select id="select-priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label>Due Date</label>
+                        <input type="date" id="select-date">
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="close-window" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="auth-popup" class="modal-overlay">
+        <div class="modal-surface">
+            <h2 id="auth-title">Welcome Back</h2>
+            <form id="auth-form">
+                <div class="form-group" id="auth-name-group" style="display: none;">
+                    <label>Full Name</label>
+                    <input type="text" id="auth-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="text" id="auth-email" placeholder="user@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="text" id="auth-password" placeholder="••••••••" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="close-auth" class="btn-cancel">Cancel</button>
+                    <button type="submit" id="btn-auth-submit" class="btn-save">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="contact-info" id="contact-section">
+        <h3>Developer Contact</h3>
+        <p>Email: <a href="mailto:mahichanie126@gmail.com">mahichanie126@gmail.com</a></p> 
+        <p>GitHub: <a href="https://github.com/mahlet-1" target="_blank"> mahlet-1</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
